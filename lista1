@@ -1,0 +1,29 @@
+def main():
+    fgf()
+
+def fgf():
+    grenais = 0
+    vitorias_inter = 0
+    vitorias_gremio = 0
+    empates = 0
+    sim_ou_não = 1
+    while sim_ou_não == 1:
+        inter,gremio = map(int,input().split())
+        grenais += 1
+        if inter > gremio:
+            vitorias_inter += 1
+        elif gremio > inter:
+            vitorias_gremio += 1
+        elif gremio == inter:
+            empates += 1
+        sim_ou_não = int(input('Novo grenal (1-sim 2-nao)\n'))
+    print(grenais,'grenais\n' + f'Inter:{vitorias_inter}\n' + f'Gremio:{vitorias_gremio}\n' + f'Empates:{empates}')
+    if vitorias_gremio > vitorias_inter:
+        print('Gremio venceu mais')
+    elif vitorias_inter > vitorias_gremio:
+         print('Inter venceu mais')
+    else:
+        print('Nao houve vencedor')
+
+
+main()
